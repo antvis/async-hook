@@ -6,7 +6,7 @@
     "rootDir": "./",
     "baseUrl": "./",
     "target": "es5",
-    "module": "commonjs",
+    "module": "esnext",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": false,
