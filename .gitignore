@@ -3,3 +3,4 @@ es
 lib
 types/*
 yarn.lock
+/yarn.lock
