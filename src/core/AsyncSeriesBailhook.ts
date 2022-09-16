@@ -2,7 +2,7 @@
 // tslint:disable-next-line:no-submodule-imports
 import series from 'async/series';
 import { CallBack } from './IHook';
-export default class AsyncSeriesHook  {
+export default class AsyncSeriesBailHook  {
   private tasks: any[];
   private args: any[] = [];
   constructor(...args: any[]) {
