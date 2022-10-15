@@ -8,7 +8,7 @@ export default class AsyncParallelHook {
     this.tasks = [];
   }
 
-  public promise(...args: any[]) {
+  public promise(...args: any[]):Promise<any> {
     return parallel(this.tasks);
   }
   public tapPromise(name: string, cb: CallBack) {

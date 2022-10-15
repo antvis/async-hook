@@ -9,7 +9,7 @@ export default class AsyncSeriesBailHook  {
     this.tasks = [];
   }
 
-  public promise(...args: any[]): void {
+  public promise(...args: any[]):Promise<any> {
     this.args = args;
     return series(this.tasks);
   }
