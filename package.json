@@ -1,6 +1,6 @@
 {
   "name": "@antv/async-hook",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "the control flow for l7",
   "main": "lib/index.js",
   "module": "es/index.js",
