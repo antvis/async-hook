@@ -15,12 +15,12 @@ export default class AsyncWaterfallHook  {
     if (this.tasks.length === 0) {
       this.tasks.push(async(callback: any) => {
         const value = await cb();
-        callback(value ? null : false, value);
+        callback(null, value);
       });
     } else {
       this.tasks.push(async (arg: any, callback: any) => {
-        const value = await cb();
-        callback(value ? null : false, name);
+        const value = await cb(arg);
+        callback(null, arg);
       });
     }
   }
