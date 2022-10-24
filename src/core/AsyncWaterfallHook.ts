@@ -13,14 +13,17 @@ export default class AsyncWaterfallHook  {
   }
   public tapPromise(name: string, cb: CallBack) {
     if (this.tasks.length === 0) {
-      this.tasks.push(async(callback: any) => {
-        const value = await cb();
-        callback(null, value);
+      this.tasks.push((callback: any) => {
+        cb()
+        .then((value: any) =>{
+          callback(null, value);
+        })
       });
     } else {
-      this.tasks.push(async (arg: any, callback: any) => {
-        const value = await cb(arg);
-        callback(null, arg);
+      this.tasks.push( (arg: any, callback: any) => {
+        cb().then((arg: any) =>{
+          callback(null, arg);
+        })
       });
     }
   }
