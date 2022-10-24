@@ -8,8 +8,13 @@ export default class AsyncWaterfallHook  {
     this.tasks = [];
   }
 
-  public promise(...args: any[]): Promise<any> {
-    return waterfall(this.tasks);
+  public async promise(...args: any[]): Promise<any> {
+    let err, result;
+    await waterfall(this.tasks, (err: Error, result: any[]) =>{
+      err = err;
+      result = result;
+    });
+    return {err, result};
   }
   public tapPromise(name: string, cb: CallBack) {
     if (this.tasks.length === 0) {
