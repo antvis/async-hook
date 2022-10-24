@@ -21,8 +21,8 @@ export default class AsyncWaterfallHook  {
       });
     } else {
       this.tasks.push( (arg: any, callback: any) => {
-        cb().then((arg: any) =>{
-          callback(null, arg);
+        cb(arg).then((v: any) =>{
+          callback(null, v);
         })
       });
     }
